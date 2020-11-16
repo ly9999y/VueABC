@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <div v-text="num"></div>
+            <div @click="handle0">
+                <button v-on:click="handle1">点击</button>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/vue.js"></script>
+        <script type="text/javascript">
+            var vm = new Vue({
+                el:"#app",
+                data: {
+                    num: 0
+                },
+                methods:{
+                    handle0:function(event){
+                        this.num ++ ;
+                    },
+                    handle1:function(event){
+                        event.stopPropagation();
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <div>
+                用户名：<input type="text" v-on:keyup.a="handle">
+            </div>
+            </form>
+        </div>
+        <script type="text/javascript" src="js/vue.js"></script>
+        <script type="text/javascript">
+
+            Vue.config.keyCodes.a=65;
+            var vm = new Vue({
+                el:"#app",
+                data: {
+                    name : "",
+                    password : ""
+                },
+                methods:{
+                    handle: function(event){
+                        console.log(event.keyCode);
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
